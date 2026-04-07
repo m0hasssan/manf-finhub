@@ -1,0 +1,286 @@
+@import '@fontsource/cairo/400.css';
+@import '@fontsource/cairo/500.css';
+@import '@fontsource/cairo/600.css';
+@import '@fontsource/cairo/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accounting System Design System - Arabic RTL */
+
+@layer base {
+  /* ===== Light Purple (Default) ===== */
+  :root, .theme-light-purple {
+    --background: 210 20% 98%;
+    --foreground: 270 40% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 40% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 40% 15%;
+    --primary: 270 60% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 270 60% 95%;
+    --secondary: 270 15% 94%;
+    --secondary-foreground: 270 40% 15%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 95%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    --danger-light: 0 84% 95%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    --muted: 270 10% 96%;
+    --muted-foreground: 270 10% 47%;
+    --accent: 270 60% 95%;
+    --accent-foreground: 270 60% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 20% 91%;
+    --input: 270 20% 91%;
+    --ring: 270 60% 50%;
+    --radius: 0.5rem;
+    --sidebar-background: 270 40% 12%;
+    --sidebar-foreground: 270 10% 90%;
+    --sidebar-primary: 270 60% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 20%;
+    --sidebar-accent-foreground: 270 10% 90%;
+    --sidebar-border: 270 40% 22%;
+    --sidebar-ring: 270 60% 60%;
+    --chart-1: 270 60% 50%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 200 65% 60%;
+  }
+
+  /* ===== Light Green ===== */
+  .theme-light-green {
+    --background: 140 20% 98%;
+    --foreground: 160 40% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 160 40% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 40% 12%;
+    --primary: 160 60% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 160 60% 95%;
+    --secondary: 160 15% 94%;
+    --secondary-foreground: 160 40% 12%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 95%;
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    --danger-light: 0 84% 95%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 38 92% 95%;
+    --muted: 160 10% 96%;
+    --muted-foreground: 160 10% 47%;
+    --accent: 160 60% 95%;
+    --accent-foreground: 160 60% 38%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 160 20% 91%;
+    --input: 160 20% 91%;
+    --ring: 160 60% 38%;
+    --radius: 0.5rem;
+    --sidebar-background: 160 40% 10%;
+    --sidebar-foreground: 160 10% 90%;
+    --sidebar-primary: 160 60% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 40% 18%;
+    --sidebar-accent-foreground: 160 10% 90%;
+    --sidebar-border: 160 40% 20%;
+    --sidebar-ring: 160 60% 48%;
+    --chart-1: 160 60% 38%;
+    --chart-2: 270 60% 50%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 200 65% 60%;
+  }
+
+  /* ===== Dark Purple ===== */
+  .theme-dark-purple {
+    --background: 270 30% 6%;
+    --foreground: 270 10% 98%;
+    --card: 270 30% 9%;
+    --card-foreground: 270 10% 98%;
+    --popover: 270 30% 9%;
+    --popover-foreground: 270 10% 98%;
+    --primary: 270 60% 65%;
+    --primary-foreground: 270 40% 10%;
+    --primary-light: 270 60% 15%;
+    --secondary: 270 20% 18%;
+    --secondary-foreground: 270 10% 98%;
+    --success: 142 76% 46%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 15%;
+    --danger: 0 84% 50%;
+    --danger-foreground: 0 0% 100%;
+    --danger-light: 0 84% 15%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 270 40% 10%;
+    --warning-light: 38 92% 15%;
+    --muted: 270 20% 17%;
+    --muted-foreground: 270 15% 65%;
+    --accent: 270 30% 17%;
+    --accent-foreground: 270 60% 65%;
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 25% 20%;
+    --input: 270 25% 20%;
+    --ring: 270 60% 65%;
+    --sidebar-background: 270 40% 4%;
+    --sidebar-foreground: 270 10% 90%;
+    --sidebar-primary: 270 60% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 30% 12%;
+    --sidebar-accent-foreground: 270 10% 90%;
+    --sidebar-border: 270 30% 14%;
+    --sidebar-ring: 270 60% 65%;
+    --chart-1: 270 60% 65%;
+    --chart-2: 142 76% 46%;
+    --chart-3: 38 92% 60%;
+    --chart-4: 0 84% 50%;
+    --chart-5: 200 65% 60%;
+  }
+
+  /* ===== Dark Green ===== */
+  .theme-dark-green {
+    --background: 160 30% 5%;
+    --foreground: 160 10% 98%;
+    --card: 160 30% 8%;
+    --card-foreground: 160 10% 98%;
+    --popover: 160 30% 8%;
+    --popover-foreground: 160 10% 98%;
+    --primary: 160 60% 50%;
+    --primary-foreground: 160 40% 8%;
+    --primary-light: 160 60% 15%;
+    --secondary: 160 20% 16%;
+    --secondary-foreground: 160 10% 98%;
+    --success: 142 76% 46%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 76% 15%;
+    --danger: 0 84% 50%;
+    --danger-foreground: 0 0% 100%;
+    --danger-light: 0 84% 15%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 160 40% 8%;
+    --warning-light: 38 92% 15%;
+    --muted: 160 20% 15%;
+    --muted-foreground: 160 15% 60%;
+    --accent: 160 30% 15%;
+    --accent-foreground: 160 60% 50%;
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 160 25% 18%;
+    --input: 160 25% 18%;
+    --ring: 160 60% 50%;
+    --sidebar-background: 160 40% 4%;
+    --sidebar-foreground: 160 10% 90%;
+    --sidebar-primary: 160 60% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 30% 10%;
+    --sidebar-accent-foreground: 160 10% 90%;
+    --sidebar-border: 160 30% 12%;
+    --sidebar-ring: 160 60% 50%;
+    --chart-1: 160 60% 50%;
+    --chart-2: 270 60% 60%;
+    --chart-3: 38 92% 60%;
+    --chart-4: 0 84% 50%;
+    --chart-5: 200 65% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+  }
+
+  body {
+    @apply bg-background text-foreground font-cairo antialiased;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply bg-card rounded-xl p-6 shadow-sm border border-border transition-all duration-200 hover:shadow-md;
+  }
+
+  .stat-card-success {
+    @apply bg-success-light border-success/20;
+  }
+
+  .stat-card-danger {
+    @apply bg-danger-light border-danger/20;
+  }
+
+  .stat-card-warning {
+    @apply bg-warning-light border-warning/20;
+  }
+
+  .data-table {
+    @apply w-full border-collapse;
+  }
+
+  .data-table th {
+    @apply bg-muted px-4 py-3 text-right font-semibold text-foreground border-b;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .data-table tr:hover {
+    @apply bg-muted/50;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-foreground transition-colors;
+  }
+
+  .sidebar-link.active {
+    @apply bg-sidebar-primary text-sidebar-primary-foreground;
+  }
+
+  .amount-positive {
+    @apply text-success font-semibold;
+  }
+
+  .amount-negative {
+    @apply text-danger font-semibold;
+  }
+
+  .tree-item {
+    @apply flex items-center gap-2 py-2 px-3 rounded-lg hover:bg-muted cursor-pointer transition-colors;
+  }
+
+  .tree-item-level-1 {
+    @apply font-bold text-lg;
+  }
+
+  .tree-item-level-2 {
+    @apply pr-6 font-semibold;
+  }
+
+  .tree-item-level-3 {
+    @apply pr-12;
+  }
+
+  .tree-item-level-4 {
+    @apply pr-16 text-muted-foreground;
+  }
+
+  .tree-item-level-5 {
+    @apply pr-20 text-muted-foreground text-sm;
+  }
+}

@@ -1,0 +1,2 @@
+ALTER TABLE public.accounts ADD COLUMN currency TEXT NOT NULL DEFAULT 'EGP';
+ALTER TABLE public.accounts ADD COLUMN exchange_rate NUMERIC NOT NULL DEFAULT 1;

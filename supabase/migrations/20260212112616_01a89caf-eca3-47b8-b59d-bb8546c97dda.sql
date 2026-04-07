@@ -1,0 +1,1 @@
+ALTER TABLE public.accounts ADD COLUMN opening_balance numeric NOT NULL DEFAULT 0;

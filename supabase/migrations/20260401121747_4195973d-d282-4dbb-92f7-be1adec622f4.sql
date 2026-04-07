@@ -1,0 +1,1 @@
+ALTER TABLE public.inventory_items ADD COLUMN opening_stock numeric DEFAULT 0;
