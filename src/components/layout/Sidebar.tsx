@@ -100,6 +100,25 @@ export function Sidebar() {
     return item.children.reduce((sum, child) => sum + getBadge(child.href), 0);
   };
 
+  // // Check if a nav item should be visible based on permissions
+  // const canSeeItem = (item: NavItem): boolean => {
+  //   if (permLoading) return false;
+  //   // Home page is always visible
+  //   if (item.href === "/") return true;
+  //   if (isAdmin) return true;
+    
+  //   const permKey = routePermissionMap[item.href];
+  //   if (permKey) return can(permKey, "view");
+    
+  //   if (item.children) {
+  //     return item.children.some((child) => canSeeItem(child));
+  //   }
+    
+  //   return false;
+  // };
+
+
+
   // Check if a nav item should be visible based on permissions
   const canSeeItem = (item: NavItem): boolean => {
     if (permLoading) return false;
@@ -107,12 +126,15 @@ export function Sidebar() {
     if (item.href === "/") return true;
     if (isAdmin) return true;
     
-    const permKey = routePermissionMap[item.href];
-    if (permKey) return can(permKey, "view");
-    
+    // 1. أولاً: نتحقق إذا كان للعنصر "أبناء" (قائمة فرعية)
+    // إذا كان أحد الأبناء مسموحاً به، يجب أن يظهر الأب تلقائياً
     if (item.children) {
       return item.children.some((child) => canSeeItem(child));
     }
+
+    // 2. ثانياً: نتحقق من صلاحية العنصر نفسه (سواء كان طفل أو عنصر وحيد)
+    const permKey = routePermissionMap[item.href];
+    if (permKey) return can(permKey, "view");
     
     return false;
   };
