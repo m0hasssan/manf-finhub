@@ -222,14 +222,23 @@ const ChartOfAccounts = () => {
 
   const collapseAll = () => setExpandedIds(new Set());
 
-  const getNextChildCode = (parentCode: string, siblings: TreeAccount[]) => {
-    const usedSuffixes = new Set(siblings.map((c) => c.code.slice(parentCode.length)));
-    for (let i = 1; i <= 500; i++) {
-      const suffix = String(i).padStart(5, "0");
-      if (!usedSuffixes.has(suffix)) return parentCode + suffix;
-    }
-    return parentCode + String(siblings.length + 1).padStart(3, "0");
-  };
+const getNextChildCode = (parentCode: string, siblings: TreeAccount[]) => {
+  if (siblings.length === 0) {
+    return parentCode + "1";
+  }
+
+  const lastChild = siblings
+    .sort((a, b) => b.code.localeCompare(a.code))[0];
+
+  const lastNumber = parseInt(
+    lastChild.code.slice(parentCode.length),
+    10
+  );
+
+  const nextNumber = lastNumber + 1;
+
+  return parentCode + nextNumber;
+};
 
   const openAddRoot = () => {
     setParentAccount(null);
