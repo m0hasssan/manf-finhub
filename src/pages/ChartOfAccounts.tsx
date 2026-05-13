@@ -247,8 +247,8 @@ const ChartOfAccounts = () => {
   const openAddChild = (parent: TreeAccount) => {
     setParentAccount(parent);
     setEditingAccount(null);
-    if (parent.children.length >= 30) {
-      toast.error("لا يمكن إضافة أكثر من 30 حساب فرعي لكل حساب");
+    if (parent.children.length >= 500) {
+      toast.error("لا يمكن إضافة أكثر من 500 حساب فرعي لكل حساب");
       return;
     }
     const nextCode = getNextChildCode(parent.code, parent.children);
