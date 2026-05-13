@@ -224,11 +224,11 @@ const ChartOfAccounts = () => {
 
   const getNextChildCode = (parentCode: string, siblings: TreeAccount[]) => {
     const usedSuffixes = new Set(siblings.map((c) => c.code.slice(parentCode.length)));
-    for (let i = 1; i <= 30; i++) {
-      const suffix = String(i).padStart(2, "0");
+    for (let i = 1; i <= 500; i++) {
+      const suffix = String(i).padStart(5, "0");
       if (!usedSuffixes.has(suffix)) return parentCode + suffix;
     }
-    return parentCode + String(siblings.length + 1).padStart(2, "0");
+    return parentCode + String(siblings.length + 1).padStart(3, "0");
   };
 
   const openAddRoot = () => {
@@ -236,8 +236,8 @@ const ChartOfAccounts = () => {
     setEditingAccount(null);
     const usedCodes = new Set(tree.map((r) => r.code));
     let nextCode = "1";
-    for (let i = 1; i <= 30; i++) {
-      const code = String(i).padStart(2, "0");
+    for (let i = 1; i <= 500; i++) {
+      const code = String(i).padStart(3, "0");
       if (!usedCodes.has(code)) { nextCode = code; break; }
     }
     setForm({ code: nextCode, name: "", type: "asset", description: "", currency: "EGP", exchange_rate: "1", opening_balance_debit: "0", opening_balance_credit: "0" });
