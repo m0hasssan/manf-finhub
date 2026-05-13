@@ -224,20 +224,23 @@ const ChartOfAccounts = () => {
 
 const getNextChildCode = (parentCode: string, siblings: TreeAccount[]) => {
   if (siblings.length === 0) {
-    return parentCode + "1";
+    return parentCode + "01";
   }
 
+  // نجيب أكبر suffix موجود
   const lastChild = siblings
     .sort((a, b) => b.code.localeCompare(a.code))[0];
 
-  const lastNumber = parseInt(
-    lastChild.code.slice(parentCode.length),
-    10
-  );
+  const lastSuffix = lastChild.code.slice(parentCode.length);
+
+  const lastNumber = parseInt(lastSuffix, 10);
 
   const nextNumber = lastNumber + 1;
 
-  return parentCode + nextNumber;
+  // نخليها دايماً رقمين
+  const padded = String(nextNumber).padStart(2, "0");
+
+  return parentCode + padded;
 };
 
   const openAddRoot = () => {
